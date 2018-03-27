@@ -1,14 +1,13 @@
 import org.scalatest.{Matchers, FunSuite}
 
 /** @version 1.2.0 */
-class FlattenArrayTest extends FunSuite with Matchers {
+class FlattenArraySpec extends FunSuite with Matchers {
 
   test("no nesting") {
     FlattenArray.flatten(List(0, 1, 2)) should be(List(0, 1, 2))
   }
 
   test("flattens array with just integers present") {
-    pending
     FlattenArray.flatten(List(1, List(2, 3, 4, 5, 6, 7), 8)) should be(
       List(1, 2, 3, 4, 5, 6, 7, 8))
   }

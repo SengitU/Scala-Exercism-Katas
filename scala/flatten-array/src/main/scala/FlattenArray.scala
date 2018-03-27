@@ -1,7 +1,7 @@
 import scala.collection.mutable.ListBuffer
 
 object FlattenArray {
-  def flatten(arrayToBeFlatten: List[Any]) = {
+  def flatten(arrayToBeFlatten: List[Any]): List[Any] = {
     var flattenedArray = ListBuffer[Any]()
 
     arrayToBeFlatten foreach {
@@ -11,6 +11,9 @@ object FlattenArray {
         flattenedArray += item
     }
 
-    flattenedArray
+    val isFlattened = arrayToBeFlatten find { _.isInstanceOf[List[Any]]}
+
+    if(isFlattened.isEmpty) arrayToBeFlatten
+    else flatten(flattenedArray toList)
   }
 }

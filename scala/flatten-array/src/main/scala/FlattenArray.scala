@@ -7,13 +7,14 @@ object FlattenArray {
     arrayToBeFlatten foreach {
       case list: List[Any] =>
         flattenedArray ++= list
-      case item =>
-        flattenedArray += item
+      case number: Int =>
+        flattenedArray += number
+      case _ =>
     }
 
-    val isFlattened = arrayToBeFlatten find { _.isInstanceOf[List[Any]]}
+    val isFlattened = flattenedArray find { _.isInstanceOf[List[Any]]}
 
-    if(isFlattened.isEmpty) arrayToBeFlatten
+    if(isFlattened.isEmpty)  flattenedArray toList
     else flatten(flattenedArray toList)
   }
 }

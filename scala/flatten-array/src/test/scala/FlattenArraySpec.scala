@@ -27,7 +27,14 @@ class FlattenArraySpec extends FunSuite with Matchers {
       8)) should be(List(1, 2, 3, 4, 5, 6, 7, 8))
   }
 
+  test("1 level nested null") {
+    FlattenArray.flatten(
+      List(1, List(null))) should be(List(1))
+  }
+
+
   test("6 level nest list with null values") {
+    pending
     FlattenArray.flatten(
       List(0,
            2,

@@ -14,7 +14,7 @@ object FlattenArray {
 
     val isFlattened = flattenedArray find { _.isInstanceOf[List[Any]]}
 
-    if(isFlattened.isEmpty)  flattenedArray toList
+    if(isFlattened.isEmpty) flattenedArray filter { _ != null} toList
     else flatten(flattenedArray toList)
   }
 }

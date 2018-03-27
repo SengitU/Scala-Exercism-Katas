@@ -34,7 +34,6 @@ class FlattenArraySpec extends FunSuite with Matchers {
 
 
   test("6 level nest list with null values") {
-    pending
     FlattenArray.flatten(
       List(0,
            2,
@@ -43,7 +42,6 @@ class FlattenArraySpec extends FunSuite with Matchers {
   }
 
   test("all values in nested list are null") {
-    pending
     FlattenArray.flatten(
       List(null,
            List(List(List(null))),
